@@ -1,15 +1,20 @@
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 import './app.scss';
+import Home from './Home';
 
 
 const App = () => {
-    console.log(motion)
+    const [total, setTotal] = useState(0)
+    // console.log('we dey re-render')
 
     return (
-        <motion.div animate={{top:'10%', fontSize:'100px', transition:{type:'spring', bounce:1, duration:10}}} className='AppMain'>
-            Am talking to you hellow
-        </motion.div>
+        <>
+            <div>total: {total}</div>
+            <Home />
+            <button onClick={() => { setTotal(c => c+ 1) }}> increase the total </button>
+        </>
     )
 }
 
